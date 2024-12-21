@@ -1,21 +1,58 @@
-import React from 'react';
 import './index.scss';
 
-function App() {
-   const [open, setOpen] = React.useState(false)
+const questions = [
+  {
+    title: 'React - is a/an ... ?',
+    variants: ['library', 'framework', 'app'],
+    correct: 0,
+  },
+  {
+    title: 'Component - is a/an ... ',
+    variants: ['app', 'part of an app or a website', 'i dont know'],
+    correct: 1,
+  },
+  {
+    title: 'What is JSX?',
+    variants: [
+      'Just simple HTML',
+      'Function',
+      'Same as HTML, but with ability to execute JavaScript',
+    ],
+    correct: 2,
+  },
+];
 
+function Result() {
+  return (
+    <div className="result">
+      <img src="https://cdn-icons-png.flaticon.com/512/2278/2278992.png" />
+      <h2>Ypu have anwered 3 out of 10</h2>
+      <button>Try again</button>
+    </div>
+  );
+}
+
+function Game() {
+  return (
+    <>
+      <div className="progress">
+        <div style={{ width: '50%' }} className="progress__inner"></div>
+      </div>
+      <h1>What is useState?</h1>
+      <ul>
+        <li>Function for storing component's data</li>
+        <li>Global state</li>
+        <li>Thats when you are useless</li>
+      </ul>
+    </>
+  );
+}
+
+function App() {
   return (
     <div className="App">
-      <button onClick={() => setOpen(true)} className="open-modal-btn">✨ Open modal</button>
-      {open && <div className="overlay">
-        <div className="modal">
-          <svg onClick={() => setOpen(false)} height="200" viewBox="0 0 200 200" width="200">
-            <title />
-            <path d="M114,100l49-49a9.9,9.9,0,0,0-14-14L100,86,51,37A9.9,9.9,0,0,0,37,51l49,49L37,149a9.9,9.9,0,0,0,14,14l49-49,49,49a9.9,9.9,0,0,0,14-14Z" />
-          </svg>
-          <img src="https://media2.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif" alt='img'/>
-        </div>
-      </div>}
+      <Game />
+      {/* <Result /> */}
     </div>
   );
 }
