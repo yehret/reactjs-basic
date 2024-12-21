@@ -1,37 +1,19 @@
-import './index.scss';
 import React from 'react';
+import './index.scss';
 
 function App() {
-  const [count, setCount] = React.useState(0);
-
-  const handleClick = React.useCallback(
-    ({ target: { className } }) => setCount((prev) => (className === 'minus' ? prev - 1 : prev + 1)),
-    []
-  );
-
-//   const handleClick = (e) => {
-//    const className = e.target.className;
-
-//    if (className === 'minus') {
-//       setCount((prev) => prev - 1);
-//    } else if (className === 'plus') {
-//       setCount((prev) => prev + 1);
-//    }
-//  };
-
-
   return (
     <div className="App">
-      <div>
-        <h2>Counter:</h2>
-        <h1>{count}</h1>
-        <button onClick={handleClick} className="minus">
-          - Minus
-        </button>
-        <button onClick={handleClick} className="plus">
-          Plus +
-        </button>
-      </div>
+      <button className="open-modal-btn">✨ Open modal</button>
+      {/* <div className="overlay">
+        <div className="modal">
+          <svg height="200" viewBox="0 0 200 200" width="200">
+            <title />
+            <path d="M114,100l49-49a9.9,9.9,0,0,0-14-14L100,86,51,37A9.9,9.9,0,0,0,37,51l49,49L37,149a9.9,9.9,0,0,0,14,14l49-49,49,49a9.9,9.9,0,0,0,14-14Z" />
+          </svg>
+          <img src="https://media2.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif" />
+        </div>
+      </div> */}
     </div>
   );
 }
